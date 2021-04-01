@@ -21,7 +21,7 @@ import foods from '../../consts/foods';
 import { useState } from 'react';
 
 const { width } = Dimensions.get('screen');
-const cardWidth = width / 2 - 20;
+const cardWidth = width / 2 - 40;
 
 const HomeScreen = ({ navigation }) => {
   const [selectCardIndex, setSelectCardIndex] = useState(0)
@@ -40,11 +40,26 @@ const HomeScreen = ({ navigation }) => {
     </ScrollView>
   }
   const Card = ({ food }) => {
-    console.log("TCL ~ file: HomeScreen.js ~ line 42 ~ Card ~ food", food)
-    return <View style={style.cardContainer}>
-      <Text>{food.name}</Text>
-      <Image style={{ width: 100, height: 100 }} w source={food.image} />
-    </View>
+    return (
+      <TouchableOpacity onPress={() => navigation.navigate('DetailsScreen', { data: food })} activeOpacity={0.9}>
+        <View style={style.cardContainer}>
+          <View style={{ alignItems: 'center', top: -40 }}>
+            <Image style={{ width: 120, height: 120 }} w source={food.image} />
+          </View>
+          <View style={{ paddingLeft: 20 }}>
+            <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{food.name}</Text>
+            <Text style={{ fontSize: 12, opacity: 0.8 }}>{food.ingredients}</Text>
+          </View>
+          <View style={{ padding: 10, flexDirection: 'row', justifyContent: 'space-around' }}>
+            <View>
+              <Text style={{ fontWeight: 'bold', fontSize: 20 }}>$8.30</Text>
+            </View>
+            <View style={{ color: COLORS.white, height: 40, width: 40, backgroundColor: COLORS.primary, alignItems: 'center', justifyContent: 'center', borderRadius: 30 }}>
+              <Text style={{ color: COLORS.white, fontSize: 28 }}>+</Text>
+            </View>
+          </View>
+        </View>
+      </TouchableOpacity>)
   }
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white, padding: 20 }}>
