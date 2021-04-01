@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, StyleSheet, View, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import COLORS from '../../consts/colors';
-import { PrimaryButton } from '../components/Button';
+import { SecondaryButton } from '../components/Button';
 
 const OnBoardScreen = () => {
   const navigation = useNavigation()
@@ -23,7 +23,7 @@ const OnBoardScreen = () => {
           <View style={style.justIndicator} />
           <View style={style.justIndicator} />
         </View>
-        <PrimaryButton title={"Buy Now"} onPress={() => navigation.navigate("Home")} />
+        <SecondaryButton title={"Buy Now"} onPress={() => navigation.navigate("Home")} />
       </View>
     </SafeAreaView>
   );

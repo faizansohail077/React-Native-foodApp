@@ -9,12 +9,10 @@ const PrimaryButton = ({ title, onPress = () => { } }) => {
     </TouchableOpacity>
   );
 };
-const SecondaryButton = () => {
+const SecondaryButton = ({ title, onPress = () => { } }) => {
   return (
-    <TouchableOpacity >
-      <View >
-        <Text>SecondaryButton</Text>
-      </View>
+    <TouchableOpacity activeOpacity={0.4} style={{ marginTop: 30, flex: 0.7, alignItems: 'center', justifyContent: 'center', backgroundColor: COLORS.white, borderRadius: 30 }} onPress={onPress}>
+      <Text style={{ textAlign: 'center', color: COLORS.primary, fontWeight: 'bold' }}>{title}</Text>
     </TouchableOpacity>
   );
 };
