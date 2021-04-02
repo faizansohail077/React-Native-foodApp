@@ -28,7 +28,9 @@ const DetailsScreen = ({ route, navigation }) => {
           <View style={{ marginTop: 30 }}>
             <Text style={{ color: COLORS.white, lineHeight: 22 }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusamus rem cumque architecto autem tenetur. Odit possimus, beatae quo illo asperiores reiciendis reprehenderit laborum, in quis quidem laboriosam? Labore quo repellendus eaque illum commodi ex saepe sunt sapiente odio alias aperiam obcaecati quae, distinctio cupiditate laborum voluptas vero repellat ab?</Text>
           </View>
-          <SecondaryButton title={"Add to Cart"} onPress={() => navigation.navigate("Cart")} />
+          <View style={{ height: 50 }}>
+            <SecondaryButton title={"Add to Cart"} onPress={() => navigation.navigate("Cart")} />
+          </View>
         </View>
       </View>
     </View>

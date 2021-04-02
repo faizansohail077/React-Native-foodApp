@@ -41,7 +41,9 @@ const CartScreen = ({ navigation }) => {
         <Text style={{ paddingLeft: 20, fontWeight: 'bold', fontSize: 15 }}>Cart</Text>
       </View>
       <FlatList keyExtractor={item => item} data={foods} renderItem={({ item }) => <Card food={item} />} />
-      <PrimaryButton title={'Checkout'} />
+      <View style={{ flex: 1, marginHorizontal: 50 }}>
+        <PrimaryButton title={'Checkout'} />
+      </View>
     </View>
   );
 };
